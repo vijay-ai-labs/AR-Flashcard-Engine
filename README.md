@@ -174,20 +174,7 @@ Set `DEBUG_TUNING = true` in `src/modelExperience.ts` to log bounding box, scale
 - Adjust `scale` and `position` in `src/cards.ts` for that letter.
 - Enable `DEBUG_TUNING` to read the normalised bounding box in the console.
 
-## Performance Notes
 
-Several GLB files are large and may cause noticeable load delays on mobile networks:
-
-| Model | Size |
-|-------|------|
-| O.glb | 8.65 MB |
-| C.glb | 7.33 MB |
-| X.glb | 7.14 MB |
-| U.glb | 6.75 MB |
-| V.glb | 6.73 MB |
-| Q.glb | 6.05 MB |
-| F.glb | 5.83 MB |
-| L.glb | 5.42 MB |
 
 Recommended target: under 3 MB per model. Tools to reduce size:
 
