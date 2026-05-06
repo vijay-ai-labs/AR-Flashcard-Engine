@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#111111" />
+  <title>ARWall — Flashcards Come Alive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/src/styles.css" />
+  <style>
+    /* immediate base so layout renders before fonts/JS load */
+    body {
+      margin: 0;
+      background: #0d0d14;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+    }
+
+    #home-page {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+
+    <!-- ═══════════════ HOME PAGE ═══════════════ -->
+    <div id="home-page">
+
+      <!-- nav -->
+      <nav class="hp-nav">
+        <div class="hp-nav-logo">
+          <span class="hp-logo-icon">◈</span>
+          <span class="hp-logo-text">ARWall</span>
+        </div>
+      </nav>
+
+      <!-- hero -->
+      <section class="hp-hero">
+        <div class="hp-glow hp-glow-purple"></div>
+        <div class="hp-glow hp-glow-cyan"></div>
+
+        <div class="hp-hero-content">
+          <div class="hp-tag">✦ &nbsp;Powered by WebAR Technology</div>
+
+          <h1 class="hp-title">
+            Flashcards Come<br />
+            <span class="hp-title-gradient">Alive in AR</span>
+          </h1>
+
+          <p class="hp-subtitle">
+            Point your camera at any alphabet flashcard and watch<br />
+            stunning 3D models appear right before your eyes.<br />
+            Learning has never been this magical.
+          </p>
+
+          <div class="hp-cta-row">
+            <button class="hp-btn-primary" id="hp-start-btn">
+              <span class="hp-btn-icon">📷</span> Start AR Experience
+            </button>
+            <button class="hp-btn-secondary" id="hp-how-btn">
+              ✦ &nbsp;How It Works
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- how it works -->
+      <section class="hp-how" id="how-it-works">
+        <h2 class="hp-section-title">How It Works</h2>
+        <p class="hp-section-sub">Three simple steps to unlock the magic</p>
+
+        <div class="hp-steps">
+          <div class="hp-step">
+            <div class="hp-step-num">01</div>
+            <div class="hp-step-icon">🃏</div>
+            <h3>Grab a Flashcard</h3>
+            <p>Pick any A–Z alphabet flashcard from your set</p>
+          </div>
+          <div class="hp-step-arrow">→</div>
+          <div class="hp-step">
+            <div class="hp-step-num">02</div>
+            <div class="hp-step-icon">📷</div>
+            <h3>Scan with Camera</h3>
+            <p>Point your device camera at the flashcard</p>
+          </div>
+          <div class="hp-step-arrow">→</div>
+          <div class="hp-step">
+            <div class="hp-step-num">03</div>
+            <div class="hp-step-icon">🎯</div>
+            <h3>Watch it Come Alive</h3>
+            <p>A 3D model pops out — drag, zoom, and explore</p>
+          </div>
+        </div>
+
+        <!-- demo card -->
+        <div class="hp-demo">
+          <div class="hp-demo-card hp-demo-card--flash">
+            <div class="hp-demo-card-inner">
+              <div class="hp-demo-letter">Aa</div>
+              <div class="hp-demo-img-placeholder">🍎</div>
+              <div class="hp-demo-word">apple</div>
+            </div>
+            <div class="hp-demo-label">FLASHCARD</div>
+          </div>
+
+          <div class="hp-demo-arrow-col">
+            <span class="hp-demo-arrow">→</span>
+            <span class="hp-demo-scan-label">SCAN</span>
+          </div>
+
+          <div class="hp-demo-card hp-demo-card--ar">
+            <div class="hp-demo-card-inner">
+              <div class="hp-demo-3d-icon">🍎</div>
+              <div class="hp-demo-ar-title">
+                <span class="hp-gradient-text">3D Apple</span> Model
+              </div>
+              <div class="hp-demo-ar-sub">AUGMENTED REALITY</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- alphabet preview -->
+      <section class="hp-alphabet">
+        <h2 class="hp-section-title">26 Letters. 26 Worlds.</h2>
+        <p class="hp-section-sub">Every letter unlocks a unique 3D experience</p>
+        <div class="hp-letters-grid">
+          <span>A🍎</span><span>B🎒</span><span>C🐪</span><span>D🐕</span>
+          <span>E🐘</span><span>F🦊</span><span>G🦒</span><span>H🦛</span>
+          <span>I🦎</span><span>J🪼</span><span>K🦘</span><span>L🦁</span>
+          <span>M🐒</span><span>N🦩</span><span>O🦦</span><span>P🐧</span>
+          <span>Q👸</span><span>R🐰</span><span>S🐍</span><span>T🐅</span>
+          <span>U🦄</span><span>V🦅</span><span>W🐺</span><span>X🎸</span>
+          <span>Y🦬</span><span>Z🦓</span>
+        </div>
+      </section>
+
+      <!-- cta -->
+      <section class="hp-cta-section">
+        <div class="hp-cta-card">
+          <div class="hp-glow hp-glow-purple hp-glow-small"></div>
+          <h2>Ready to Experience AR?</h2>
+          <p>Grab your flashcard and let the magic begin!</p>
+          <button class="hp-btn-primary hp-btn-large" id="hp-launch-btn">
+            🚀 &nbsp;Launch AR Now
+          </button>
+        </div>
+      </section>
+
+      <!-- footer -->
+      <footer class="hp-footer">
+        <!-- light scan frame -->
+        <div class="hp-footer-scan" aria-hidden="true">
+          <svg width="72" height="48" viewBox="0 0 72 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- corners -->
+            <path d="M2 14V2h12" stroke="rgba(220,210,255,0.55)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M70 14V2H58" stroke="rgba(220,210,255,0.55)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 34v12h12" stroke="rgba(220,210,255,0.55)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M70 34v12H58" stroke="rgba(220,210,255,0.55)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- scan line -->
+            <line x1="10" y1="24" x2="62" y2="24" stroke="rgba(6,182,212,0.45)" stroke-width="1" stroke-linecap="round" stroke-dasharray="4 3"/>
+            <!-- centre dot -->
+            <circle cx="36" cy="24" r="2" fill="rgba(6,182,212,0.7)"/>
+          </svg>
+        </div>
+        <!-- logo + text -->
+        <span class="hp-footer-brand">
+          <span class="hp-footer-logo-box">
+            <svg width="13" height="13" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M2 8V2h6" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M24 8V2h-6" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 18v6h6" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M24 18v6h-6" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="13" cy="13" r="2" fill="#06b6d4"/>
+              <line x1="13" y1="9" x2="13" y2="7" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="13" y1="17" x2="13" y2="19" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="9" y1="13" x2="7" y2="13" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="17" y1="13" x2="19" y2="13" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </span>
+          ARWall &nbsp;·&nbsp; Alphabet Flashcard AR
+        </span>
+      </footer>
+
+    </div>
+    <!-- ═══════════════ END HOME PAGE ═══════════════ -->
+    <main id="ar-container" aria-label="Alphabet flashcard AR viewer"></main>
+
+    <div id="scan-overlay" class="scan-overlay active ar-ui" aria-hidden="true" style="display:none">
+      <div class="scan-card">
+        <span class="scan-corner top-left"></span>
+        <span class="scan-corner top-right"></span>
+        <span class="scan-corner bottom-left"></span>
+        <span class="scan-corner bottom-right"></span>
+        <span class="scan-line"></span>
+      </div>
+      <p>Align a flashcard inside the frame</p>
+    </div>
+
+    <section class="status-panel ar-ui" aria-live="polite" style="display:none">
+      <div class="status-dot" id="status-dot"></div>
+      <div id="status-letter" class="status-letter" aria-hidden="true"></div>
+      <div>
+        <p id="status-title">Preparing AR</p>
+        <span id="status-detail">Loading alphabet flashcard targets…</span>
+      </div>
+    </section>
+
+    <div id="interaction-hint" class="interaction-hint ar-ui" aria-hidden="true" style="display:none">
+      Drag to rotate · Pinch to zoom · Hold to move · Tap to play
+    </div>
+
+    <div id="model-loader" class="ar-ui hidden" style="display:none" aria-live="polite" aria-atomic="true">
+      <div class="loader-ring"></div>
+      <span id="loader-text">Loading…</span>
+    </div>
+
+    <div class="controls ar-ui" aria-label="AR controls" style="display:none">
+      <button id="start-button" type="button">Start Camera</button>
+      <button id="reset-button" type="button" aria-label="Reset model transform" disabled>Reset</button>
+      <button id="audio-button" type="button" aria-label="Play pronunciation audio" disabled>🔊 Play</button>
+      <button id="place-button" type="button" aria-label="Place model in world space" style="display:none">📍 Place Here</button>
+      <button id="return-button" type="button" aria-label="Return model to card tracking" style="display:none">↩ Return</button>
+    </div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+  <script>
+    function launchAR() {
+      document.getElementById('home-page').classList.add('hp-hidden');
+      document.querySelectorAll('.ar-ui').forEach(function (el) {
+        el.style.display = '';
+      });
+      document.getElementById('start-button').click();
+    }
+    document.getElementById('hp-start-btn').addEventListener('click', launchAR);
+    document.getElementById('hp-launch-btn').addEventListener('click', launchAR);
+    document.getElementById('hp-how-btn').addEventListener('click', function () {
+      document.getElementById('how-it-works').scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+</body>
+
+</html>
