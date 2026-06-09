@@ -1,17 +1,11 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import type { CardConfig } from "./cards";
 
 // Set true to log bounding box + transform per letter — helps tune scale/position on-device
 const DEBUG_TUNING = false;
 
-const dracoLoader = new DRACOLoader();
-dracoLoader.setDecoderPath("/draco/");
-dracoLoader.preload(); // compile WASM decoder now, not on first model load
-
 const loader = new GLTFLoader();
-loader.setDRACOLoader(dracoLoader);
 const LIGHTING_FLAG = "__arLightingAdded";
 
 // Soft whoosh on spawn — silently skip if file missing
@@ -483,11 +477,11 @@ export class ModelExperience {
       const t = Math.min(this.bounceTime / this.bounceDuration, 1);
       const pulse = 1 + Math.sin(t * Math.PI * 2.5) * 0.13 * (1 - t);
       this.model.scale.setScalar(this.bounceBaseScale * pulse);
-      this.model.position.y = this.baseY + Math.sin(t * Math.PI) * 0.07;
+      this.model.position.y = this.baseY + this.offsetY + Math.sin(t * Math.PI) * 0.07;
       if (t >= 1) {
         this.isBouncing = false;
         this.model.scale.setScalar(this.bounceBaseScale);
-        this.model.position.y = this.baseY;
+        this.model.position.y = this.baseY + this.offsetY;
       }
       if (this.mixer) this.mixer.update(delta);
       return;
@@ -498,7 +492,7 @@ export class ModelExperience {
     if (this.mixer) {
       this.mixer.update(delta);
     } else if (!this.isPlaced) {
-      this.model.position.y = this.baseY + Math.sin(this.idleTime * 1.2) * 0.04;
+      this.model.position.y = this.baseY + this.offsetY + Math.sin(this.idleTime * 1.2) * 0.04;
       this.model.rotation.y += delta * 0.5;
     }
 

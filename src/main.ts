@@ -475,9 +475,6 @@ startButton.addEventListener("click", async () => {
     isStarted = true;
     setStatus("scanning", "Scan an alphabet flashcard", "Point your camera at any A–Z flashcard.");
 
-    // Preload all models in parallel so any card scan is instant
-    Promise.all(experiences.map(exp => exp.load().catch(() => {})));
-
     let lastTime = performance.now();
     renderer.setAnimationLoop(() => {
       const now   = performance.now();
